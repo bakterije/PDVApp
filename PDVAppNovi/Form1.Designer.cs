@@ -33,11 +33,11 @@
             labelPoreznaStopaR1 = new Label();
             buttonAddNewRow = new Button();
             label1 = new Label();
-            CommisionTotalPDVValue = new Label();
-            CommisionTotalOsnovicaValue = new Label();
+            labelCommisionTotalPDVValue = new Label();
+            labelCommisionTotalOsnovicaValue = new Label();
             labelCommisionTotalPDV = new Label();
             labelCommisionTotalOsnovica = new Label();
-            button5 = new Button();
+            buttonIzracunajPDV = new Button();
             labelPDVUkupno = new Label();
             label29 = new Label();
             labelOsnovicaUkupno = new Label();
@@ -120,7 +120,7 @@
             // 
             // buttonAddNewRow
             // 
-            buttonAddNewRow.Location = new Point(523, 483);
+            buttonAddNewRow.Location = new Point(523, 497);
             buttonAddNewRow.Name = "buttonAddNewRow";
             buttonAddNewRow.Size = new Size(111, 33);
             buttonAddNewRow.TabIndex = 7;
@@ -138,23 +138,23 @@
             label1.TabIndex = 8;
             label1.Text = "R1 Racuni";
             // 
-            // CommisionTotalPDVValue
+            // labelCommisionTotalPDVValue
             // 
-            CommisionTotalPDVValue.AutoSize = true;
-            CommisionTotalPDVValue.Location = new Point(1240, 452);
-            CommisionTotalPDVValue.Name = "CommisionTotalPDVValue";
-            CommisionTotalPDVValue.Size = new Size(22, 25);
-            CommisionTotalPDVValue.TabIndex = 111;
-            CommisionTotalPDVValue.Text = "0";
+            labelCommisionTotalPDVValue.AutoSize = true;
+            labelCommisionTotalPDVValue.Location = new Point(1240, 452);
+            labelCommisionTotalPDVValue.Name = "labelCommisionTotalPDVValue";
+            labelCommisionTotalPDVValue.Size = new Size(22, 25);
+            labelCommisionTotalPDVValue.TabIndex = 111;
+            labelCommisionTotalPDVValue.Text = "0";
             // 
-            // CommisionTotalOsnovicaValue
+            // labelCommisionTotalOsnovicaValue
             // 
-            CommisionTotalOsnovicaValue.AutoSize = true;
-            CommisionTotalOsnovicaValue.Location = new Point(1240, 423);
-            CommisionTotalOsnovicaValue.Name = "CommisionTotalOsnovicaValue";
-            CommisionTotalOsnovicaValue.Size = new Size(22, 25);
-            CommisionTotalOsnovicaValue.TabIndex = 110;
-            CommisionTotalOsnovicaValue.Text = "0";
+            labelCommisionTotalOsnovicaValue.AutoSize = true;
+            labelCommisionTotalOsnovicaValue.Location = new Point(1240, 423);
+            labelCommisionTotalOsnovicaValue.Name = "labelCommisionTotalOsnovicaValue";
+            labelCommisionTotalOsnovicaValue.Size = new Size(22, 25);
+            labelCommisionTotalOsnovicaValue.TabIndex = 110;
+            labelCommisionTotalOsnovicaValue.Text = "0";
             // 
             // labelCommisionTotalPDV
             // 
@@ -174,14 +174,15 @@
             labelCommisionTotalOsnovica.TabIndex = 108;
             labelCommisionTotalOsnovica.Text = "Commision Total Osnovica";
             // 
-            // button5
+            // buttonIzracunajPDV
             // 
-            button5.Location = new Point(889, 497);
-            button5.Name = "button5";
-            button5.Size = new Size(111, 33);
-            button5.TabIndex = 107;
-            button5.Text = "Izracunaj";
-            button5.UseVisualStyleBackColor = true;
+            buttonIzracunajPDV.Location = new Point(889, 497);
+            buttonIzracunajPDV.Name = "buttonIzracunajPDV";
+            buttonIzracunajPDV.Size = new Size(111, 33);
+            buttonIzracunajPDV.TabIndex = 107;
+            buttonIzracunajPDV.Text = "Izracunaj";
+            buttonIzracunajPDV.UseVisualStyleBackColor = true;
+            buttonIzracunajPDV.Click += buttonIzracunajPDV_Click;
             // 
             // labelPDVUkupno
             // 
@@ -439,7 +440,7 @@
             // 
             // buttonIzracunajR1Racun
             // 
-            buttonIzracunajR1Racun.Location = new Point(522, 544);
+            buttonIzracunajR1Racun.Location = new Point(522, 558);
             buttonIzracunajR1Racun.Name = "buttonIzracunajR1Racun";
             buttonIzracunajR1Racun.Size = new Size(112, 34);
             buttonIzracunajR1Racun.TabIndex = 119;
@@ -641,11 +642,11 @@
             Controls.Add(labelPDVUkupnoR1);
             Controls.Add(labelPDVUkupnoR1Text);
             Controls.Add(labelOsnovicaUkupnoR1Text);
-            Controls.Add(CommisionTotalPDVValue);
-            Controls.Add(CommisionTotalOsnovicaValue);
+            Controls.Add(labelCommisionTotalPDVValue);
+            Controls.Add(labelCommisionTotalOsnovicaValue);
             Controls.Add(labelCommisionTotalPDV);
             Controls.Add(labelCommisionTotalOsnovica);
-            Controls.Add(button5);
+            Controls.Add(buttonIzracunajPDV);
             Controls.Add(labelPDVUkupno);
             Controls.Add(label29);
             Controls.Add(labelOsnovicaUkupno);
@@ -672,7 +673,7 @@
             Controls.Add(labelPDVR1);
             Controls.Add(labelOsnovicaR1);
             Name = "Form1";
-            Text = "z";
+            Text = "PDV & R1 Application";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)numericUpDownCommissionNoPDVAirbnb).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownCommissionNoPDVBooking).EndInit();
@@ -692,11 +693,11 @@
         private Label labelPoreznaStopaR1;
         private Button buttonAddNewRow;
         private Label label1;
-        private Label CommisionTotalPDVValue;
-        private Label CommisionTotalOsnovicaValue;
+        private Label labelCommisionTotalPDVValue;
+        private Label labelCommisionTotalOsnovicaValue;
         private Label labelCommisionTotalPDV;
         private Label labelCommisionTotalOsnovica;
-        private Button button5;
+        private Button buttonIzracunajPDV;
         private Label labelPDVUkupno;
         private Label label29;
         private Label labelOsnovicaUkupno;

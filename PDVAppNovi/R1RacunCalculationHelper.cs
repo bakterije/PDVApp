@@ -4,13 +4,13 @@ using System.Windows.Forms;
 
 namespace PDVAppNovi
 {
-    public class CalculationHelper
+    public class R1RacunCalculationHelper
     {
         private static List<string> porezneStope = new List<string>()
         {
-            "5%",
-            "13%",
-            "25%"
+           "25%",
+           "13%",
+           "5%"
         };
 
         public static int GetPoreznaStopa(ComboBox poreznaStopa)
@@ -92,7 +92,7 @@ namespace PDVAppNovi
             labelUkupnoR125.Text = ukupniRacun25.ToString("C");
 
             // Izracun R1 Racuna Kamatna stopa 5%
-            ukupniRacun5 = ukupnaOsnovica25 + ukupniPDV5;
+            ukupniRacun5 = ukupnaOsnovica5 + ukupniPDV5;
             labelOsnovica5.Text = ukupnaOsnovica5.ToString("C");
             labelPDV5.Text = ukupniPDV5.ToString("C");
             labelUkupnoR15.Text = ukupniRacun5.ToString("C");
@@ -104,6 +104,20 @@ namespace PDVAppNovi
             labelUkupnoR113.Text = ukupniRacun13.ToString("C");
 
             return ukupniracun;
+        }
+        public static List<string> GetSortedPorezneStope()
+        {
+            List<string> sortedList = new List<string>(porezneStope);
+            sortedList.Sort((x, y) =>
+            {
+                if (x == "25%")
+                    return -1;
+                else if (y == "25%")
+                    return 1;
+                else
+                    return x.CompareTo(y);
+            });
+            return sortedList;
         }
     }
 }

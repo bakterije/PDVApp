@@ -15,7 +15,8 @@ namespace PDVAppNovi
             Racuni = new List<RacunRow>();
         }
 
-        public void CreateRow(int rowCount, int rowHeight, int itemWidth, int itemHeight, int horizontalSpace)
+
+        public void CreateRowR1Racuni(int rowCount, int rowHeight, int itemWidth, int itemHeight, int horizontalSpace)
         {
             int currentPositionZ = rowCount * (rowHeight + 10);
             int horisontalOffset = 10;
@@ -70,7 +71,7 @@ namespace PDVAppNovi
                 Osnovica = new NumericUpDown();
                 PDV = new NumericUpDown();
                 PoreznaStopa = new ComboBox();
-                PoreznaStopa.DataSource = porezneStope;
+                PoreznaStopa.DataSource = R1RacunCalculationHelper.GetSortedPorezneStope();
             }
 
             private int getPoreznaStopa()
