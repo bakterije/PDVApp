@@ -89,7 +89,6 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDownCommissionNoPDVBooking).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownAirbnbSales).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownBookingSales).BeginInit();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // labelOsnovicaR1
@@ -121,7 +120,7 @@
             // 
             // buttonAddNewRow
             // 
-            buttonAddNewRow.Location = new Point(474, 0);
+            buttonAddNewRow.Location = new Point(523, 483);
             buttonAddNewRow.Name = "buttonAddNewRow";
             buttonAddNewRow.Size = new Size(111, 33);
             buttonAddNewRow.TabIndex = 7;
@@ -433,7 +432,6 @@
             // panel1
             // 
             panel1.AutoScroll = true;
-            panel1.Controls.Add(buttonAddNewRow);
             panel1.Location = new Point(11, 158);
             panel1.Name = "panel1";
             panel1.Size = new Size(623, 319);
@@ -441,7 +439,7 @@
             // 
             // buttonIzracunajR1Racun
             // 
-            buttonIzracunajR1Racun.Location = new Point(522, 496);
+            buttonIzracunajR1Racun.Location = new Point(522, 544);
             buttonIzracunajR1Racun.Name = "buttonIzracunajR1Racun";
             buttonIzracunajR1Racun.Size = new Size(112, 34);
             buttonIzracunajR1Racun.TabIndex = 119;
@@ -616,6 +614,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1284, 946);
+            Controls.Add(buttonAddNewRow);
             Controls.Add(labelOsnovica13);
             Controls.Add(labelUkupnoR113);
             Controls.Add(labelUkupnoR113Text);
@@ -679,7 +678,6 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDownCommissionNoPDVBooking).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownAirbnbSales).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownBookingSales).EndInit();
-            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }

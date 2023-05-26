@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿                      using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -19,6 +19,7 @@ namespace PDVAppNovi
         {
             int currentPositionZ = rowCount * (rowHeight + 10);
             int horisontalOffset = 10;
+
             // Create controls for the new row
             RacunRow racunRow = new RacunRow();
             racunRow.Osnovica.Location = new Point(horisontalOffset, currentPositionZ);
@@ -42,7 +43,8 @@ namespace PDVAppNovi
             panel.Controls.Add(racunRow.Osnovica);
             panel.Controls.Add(racunRow.PDV);
             panel.Controls.Add(racunRow.PoreznaStopa);
-            panel.AutoScrollMinSize = new Size(0, rowCount * 30);
+            panel.AutoScrollMinSize = new Size(0, (rowCount + 1) * (rowHeight + 10)); // Update the scrollable area
+            panel.AutoScrollPosition = new Point(0, panel.VerticalScroll.Maximum); // Scroll to the bottom
             panel.AutoScroll = true;
 
             Racuni.Add(racunRow);
