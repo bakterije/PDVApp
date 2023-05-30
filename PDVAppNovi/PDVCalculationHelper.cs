@@ -9,10 +9,10 @@ namespace PDVAppNovi
 {
     public class PDVCalculationHelper
     {
-    
-        public static decimal GetPDVPodatke(Label labelBookingOsnovica, Label labelBookingPDV,NumericUpDown numericUpDownBookingSales,
+
+        public static decimal GetPDVPodatke(Label labelBookingOsnovica, Label labelBookingPDV, NumericUpDown numericUpDownBookingSales,
             NumericUpDown numericUpDownCommissionNoPDVBooking, NumericUpDown numericUpDownAirbnbSales, NumericUpDown numericUpDownCommissionNoPDVAirbnb,
-            Label labelAirbnbOsnovica,Label labelAirbnbPDV, Label labelOsnovicaUkupno, Label labelPDVUkupno, 
+            Label labelAirbnbOsnovica, Label labelAirbnbPDV, Label labelOsnovicaUkupno, Label labelPDVUkupno,
             Label labelCommisionTotalOsnovicaValue, Label labelCommisionTotalPDVValue)
         {
             decimal BookingOsnovica;
@@ -39,7 +39,7 @@ namespace PDVAppNovi
             BookingPDV = (numericUpDownBookingSales.Value - numericUpDownCommissionNoPDVBooking.Value) * 13 / Convert.ToDecimal(113);
             BookingOsnovica = numericBookingSales - numericCommissionNoPDVBooking - BookingPDV;
             AirbnbPDV = (numericUpDownAirbnbSales.Value - numericUpDownCommissionNoPDVAirbnb.Value) * 13 / Convert.ToDecimal(113);
-            AirbnbOsnovica = numericBookingSales - numericCommissionNoPDVAirbnb - AirbnbPDV;
+            AirbnbOsnovica = numericAirbnbSales - numericCommissionNoPDVAirbnb - AirbnbPDV;
             OsnovicaUkupno = BookingOsnovica + AirbnbOsnovica;
             PDVUkupno = BookingPDV + AirbnbPDV;
             CommissionTotalOsnovica = numericCommissionNoPDVAirbnb + numericCommissionNoPDVBooking;
@@ -57,7 +57,7 @@ namespace PDVAppNovi
 
 
 
-                }
-        
+        }
+
     }
 }
