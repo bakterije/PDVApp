@@ -1,4 +1,4 @@
-﻿                      using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -50,6 +50,34 @@ namespace PDVAppNovi
 
             Racuni.Add(racunRow);
         }
+        public void DeleteRacunRow(int rowCount, int rowHeight)
+        {
+            if (Racuni.Count > 0)
+            {
+                RacunRow lastRow = Racuni[Racuni.Count - 1];
+
+                // Remove controls from the panel
+                panel.Controls.Remove(lastRow.Osnovica);
+                panel.Controls.Remove(lastRow.PDV);
+                panel.Controls.Remove(lastRow.PoreznaStopa);
+
+                // Dispose the controls to release resources
+                lastRow.Osnovica.Dispose();
+                lastRow.PDV.Dispose();
+                lastRow.PoreznaStopa.Dispose();
+
+                // Remove the last row from the list
+                Racuni.RemoveAt(Racuni.Count - 1);
+
+                // Update rowCount
+                rowCount--;
+
+                // Update the scrollable area
+                panel.AutoScrollMinSize = new Size(0, (rowCount + 1) * (rowHeight + 10));
+            }
+        }
+
+
 
         public class RacunRow
         {

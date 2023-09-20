@@ -85,6 +85,24 @@
             labelPDV13 = new Label();
             labelPDVR113Text = new Label();
             labelOsnovicaR113Text = new Label();
+            RemoveButton = new Button();
+            SaveButtonAirbnb = new Button();
+            labelAirbnbSumSaved = new Label();
+            listBoxAirbnb = new ListBox();
+            labelOdjeljak2Red2 = new Label();
+            buttonLoadCSV = new Button();
+            labelOdjeljak2Red2OsnovicaValue = new Label();
+            labelOdjeljak2Red2PDVValue = new Label();
+            labelOdjeljak2Red10 = new Label();
+            labelOdjeljak2Red10PDVValue = new Label();
+            labelOdjeljak2Red10OsnovicaValue = new Label();
+            labelOdjeljak3Red10 = new Label();
+            labelOdjeljak3Red10PDVValue = new Label();
+            labelOdjeljak3Red10OsnovicaValue = new Label();
+            labelUkupnoPDVZaPlatiti = new Label();
+            labelUkupnoPDVZaPlatitiValue = new Label();
+            ClearButtonAirbnb = new Button();
+            ClearLastRowButtonAirbnb = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDownCommissionNoPDVAirbnb).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownCommissionNoPDVBooking).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownAirbnbSales).BeginInit();
@@ -610,11 +628,198 @@
             labelOsnovicaR113Text.TabIndex = 132;
             labelOsnovicaR113Text.Text = "Osnovica 13%";
             // 
+            // RemoveButton
+            // 
+            RemoveButton.Location = new Point(523, 608);
+            RemoveButton.Name = "RemoveButton";
+            RemoveButton.Size = new Size(112, 34);
+            RemoveButton.TabIndex = 138;
+            RemoveButton.Text = "Remove";
+            RemoveButton.UseVisualStyleBackColor = true;
+            RemoveButton.Click += RemoveButton_Click;
+            // 
+            // SaveButtonAirbnb
+            // 
+            SaveButtonAirbnb.Location = new Point(1205, 155);
+            SaveButtonAirbnb.Name = "SaveButtonAirbnb";
+            SaveButtonAirbnb.Size = new Size(101, 34);
+            SaveButtonAirbnb.TabIndex = 139;
+            SaveButtonAirbnb.Text = "Save";
+            SaveButtonAirbnb.UseVisualStyleBackColor = true;
+            SaveButtonAirbnb.Click += SaveButtonAirbnb_Click;
+            // 
+            // labelAirbnbSumSaved
+            // 
+            labelAirbnbSumSaved.AutoSize = true;
+            labelAirbnbSumSaved.Location = new Point(1430, 160);
+            labelAirbnbSumSaved.Name = "labelAirbnbSumSaved";
+            labelAirbnbSumSaved.Size = new Size(102, 25);
+            labelAirbnbSumSaved.TabIndex = 140;
+            labelAirbnbSumSaved.Text = "Save Status";
+            // 
+            // listBoxAirbnb
+            // 
+            listBoxAirbnb.BackColor = SystemColors.Control;
+            listBoxAirbnb.BorderStyle = BorderStyle.None;
+            listBoxAirbnb.FormattingEnabled = true;
+            listBoxAirbnb.ItemHeight = 25;
+            listBoxAirbnb.Location = new Point(1205, 235);
+            listBoxAirbnb.Name = "listBoxAirbnb";
+            listBoxAirbnb.Size = new Size(271, 125);
+            listBoxAirbnb.TabIndex = 141;
+            // 
+            // labelOdjeljak2Red2
+            // 
+            labelOdjeljak2Red2.AutoSize = true;
+            labelOdjeljak2Red2.Location = new Point(1011, 621);
+            labelOdjeljak2Red2.Name = "labelOdjeljak2Red2";
+            labelOdjeljak2Red2.Size = new Size(45, 25);
+            labelOdjeljak2Red2.TabIndex = 142;
+            labelOdjeljak2Red2.Text = "II.2: ";
+            // 
+            // buttonLoadCSV
+            // 
+            buttonLoadCSV.Location = new Point(28, 38);
+            buttonLoadCSV.Name = "buttonLoadCSV";
+            buttonLoadCSV.Size = new Size(112, 34);
+            buttonLoadCSV.TabIndex = 143;
+            buttonLoadCSV.Text = "Load CSV";
+            buttonLoadCSV.UseVisualStyleBackColor = true;
+            buttonLoadCSV.Click += buttonLoadCSV_Click;
+            // 
+            // labelOdjeljak2Red2OsnovicaValue
+            // 
+            labelOdjeljak2Red2OsnovicaValue.AutoSize = true;
+            labelOdjeljak2Red2OsnovicaValue.Location = new Point(1094, 621);
+            labelOdjeljak2Red2OsnovicaValue.Name = "labelOdjeljak2Red2OsnovicaValue";
+            labelOdjeljak2Red2OsnovicaValue.Size = new Size(22, 25);
+            labelOdjeljak2Red2OsnovicaValue.TabIndex = 144;
+            labelOdjeljak2Red2OsnovicaValue.Text = "0";
+            // 
+            // labelOdjeljak2Red2PDVValue
+            // 
+            labelOdjeljak2Red2PDVValue.AutoSize = true;
+            labelOdjeljak2Red2PDVValue.Location = new Point(1205, 621);
+            labelOdjeljak2Red2PDVValue.Name = "labelOdjeljak2Red2PDVValue";
+            labelOdjeljak2Red2PDVValue.Size = new Size(22, 25);
+            labelOdjeljak2Red2PDVValue.TabIndex = 145;
+            labelOdjeljak2Red2PDVValue.Text = "0";
+            // 
+            // labelOdjeljak2Red10
+            // 
+            labelOdjeljak2Red10.AutoSize = true;
+            labelOdjeljak2Red10.Location = new Point(1011, 646);
+            labelOdjeljak2Red10.Name = "labelOdjeljak2Red10";
+            labelOdjeljak2Red10.Size = new Size(55, 25);
+            labelOdjeljak2Red10.TabIndex = 146;
+            labelOdjeljak2Red10.Text = "II.10: ";
+            // 
+            // labelOdjeljak2Red10PDVValue
+            // 
+            labelOdjeljak2Red10PDVValue.AutoSize = true;
+            labelOdjeljak2Red10PDVValue.Location = new Point(1205, 646);
+            labelOdjeljak2Red10PDVValue.Name = "labelOdjeljak2Red10PDVValue";
+            labelOdjeljak2Red10PDVValue.Size = new Size(22, 25);
+            labelOdjeljak2Red10PDVValue.TabIndex = 148;
+            labelOdjeljak2Red10PDVValue.Text = "0";
+            // 
+            // labelOdjeljak2Red10OsnovicaValue
+            // 
+            labelOdjeljak2Red10OsnovicaValue.AutoSize = true;
+            labelOdjeljak2Red10OsnovicaValue.Location = new Point(1094, 646);
+            labelOdjeljak2Red10OsnovicaValue.Name = "labelOdjeljak2Red10OsnovicaValue";
+            labelOdjeljak2Red10OsnovicaValue.Size = new Size(22, 25);
+            labelOdjeljak2Red10OsnovicaValue.TabIndex = 147;
+            labelOdjeljak2Red10OsnovicaValue.Text = "0";
+            // 
+            // labelOdjeljak3Red10
+            // 
+            labelOdjeljak3Red10.AutoSize = true;
+            labelOdjeljak3Red10.Location = new Point(1011, 671);
+            labelOdjeljak3Red10.Name = "labelOdjeljak3Red10";
+            labelOdjeljak3Red10.Size = new Size(60, 25);
+            labelOdjeljak3Red10.TabIndex = 149;
+            labelOdjeljak3Red10.Text = "III.10: ";
+            // 
+            // labelOdjeljak3Red10PDVValue
+            // 
+            labelOdjeljak3Red10PDVValue.AutoSize = true;
+            labelOdjeljak3Red10PDVValue.Location = new Point(1205, 671);
+            labelOdjeljak3Red10PDVValue.Name = "labelOdjeljak3Red10PDVValue";
+            labelOdjeljak3Red10PDVValue.Size = new Size(22, 25);
+            labelOdjeljak3Red10PDVValue.TabIndex = 151;
+            labelOdjeljak3Red10PDVValue.Text = "0";
+            // 
+            // labelOdjeljak3Red10OsnovicaValue
+            // 
+            labelOdjeljak3Red10OsnovicaValue.AutoSize = true;
+            labelOdjeljak3Red10OsnovicaValue.Location = new Point(1094, 671);
+            labelOdjeljak3Red10OsnovicaValue.Name = "labelOdjeljak3Red10OsnovicaValue";
+            labelOdjeljak3Red10OsnovicaValue.Size = new Size(22, 25);
+            labelOdjeljak3Red10OsnovicaValue.TabIndex = 150;
+            labelOdjeljak3Red10OsnovicaValue.Text = "0";
+            // 
+            // labelUkupnoPDVZaPlatiti
+            // 
+            labelUkupnoPDVZaPlatiti.AutoSize = true;
+            labelUkupnoPDVZaPlatiti.Location = new Point(719, 586);
+            labelUkupnoPDVZaPlatiti.Name = "labelUkupnoPDVZaPlatiti";
+            labelUkupnoPDVZaPlatiti.Size = new Size(195, 25);
+            labelUkupnoPDVZaPlatiti.TabIndex = 153;
+            labelUkupnoPDVZaPlatiti.Text = "Ukupno PDV Za Platiti: ";
+            // 
+            // labelUkupnoPDVZaPlatitiValue
+            // 
+            labelUkupnoPDVZaPlatitiValue.AutoSize = true;
+            labelUkupnoPDVZaPlatitiValue.Location = new Point(904, 586);
+            labelUkupnoPDVZaPlatitiValue.Name = "labelUkupnoPDVZaPlatitiValue";
+            labelUkupnoPDVZaPlatitiValue.Size = new Size(22, 25);
+            labelUkupnoPDVZaPlatitiValue.TabIndex = 154;
+            labelUkupnoPDVZaPlatitiValue.Text = "0";
+            // 
+            // ClearButtonAirbnb
+            // 
+            ClearButtonAirbnb.Location = new Point(1317, 155);
+            ClearButtonAirbnb.Name = "ClearButtonAirbnb";
+            ClearButtonAirbnb.Size = new Size(101, 34);
+            ClearButtonAirbnb.TabIndex = 155;
+            ClearButtonAirbnb.Text = "Clear";
+            ClearButtonAirbnb.UseVisualStyleBackColor = true;
+            ClearButtonAirbnb.Click += ClearButtonAirbnb_Click;
+            // 
+            // ClearLastRowButtonAirbnb
+            // 
+            ClearLastRowButtonAirbnb.Location = new Point(1205, 195);
+            ClearLastRowButtonAirbnb.Name = "ClearLastRowButtonAirbnb";
+            ClearLastRowButtonAirbnb.Size = new Size(101, 34);
+            ClearLastRowButtonAirbnb.TabIndex = 156;
+            ClearLastRowButtonAirbnb.Text = "Clear Last Row";
+            ClearLastRowButtonAirbnb.UseVisualStyleBackColor = true;
+            ClearLastRowButtonAirbnb.Click += ClearLastRowButtonAirbnb_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1284, 946);
+            ClientSize = new Size(1639, 946);
+            Controls.Add(ClearLastRowButtonAirbnb);
+            Controls.Add(ClearButtonAirbnb);
+            Controls.Add(labelUkupnoPDVZaPlatitiValue);
+            Controls.Add(labelUkupnoPDVZaPlatiti);
+            Controls.Add(labelOdjeljak3Red10PDVValue);
+            Controls.Add(labelOdjeljak3Red10OsnovicaValue);
+            Controls.Add(labelOdjeljak3Red10);
+            Controls.Add(labelOdjeljak2Red10PDVValue);
+            Controls.Add(labelOdjeljak2Red10OsnovicaValue);
+            Controls.Add(labelOdjeljak2Red10);
+            Controls.Add(labelOdjeljak2Red2PDVValue);
+            Controls.Add(labelOdjeljak2Red2OsnovicaValue);
+            Controls.Add(buttonLoadCSV);
+            Controls.Add(labelOdjeljak2Red2);
+            Controls.Add(listBoxAirbnb);
+            Controls.Add(labelAirbnbSumSaved);
+            Controls.Add(SaveButtonAirbnb);
+            Controls.Add(RemoveButton);
             Controls.Add(buttonAddNewRow);
             Controls.Add(labelOsnovica13);
             Controls.Add(labelUkupnoR113);
@@ -745,5 +950,23 @@
         private Label labelPDV13;
         private Label labelPDVR113Text;
         private Label labelOsnovicaR113Text;
+        private Button RemoveButton;
+        private Button SaveButtonAirbnb;
+        private Label labelAirbnbSumSaved;
+        private ListBox listBoxAirbnb;
+        private Label labelOdjeljak2Red2;
+        private Button buttonLoadCSV;
+        private Label labelOdjeljak2Red2OsnovicaValue;
+        private Label labelOdjeljak2Red2PDVValue;
+        private Label labelOdjeljak2Red10;
+        private Label labelOdjeljak2Red10PDVValue;
+        private Label labelOdjeljak2Red10OsnovicaValue;
+        private Label labelOdjeljak3Red10;
+        private Label labelOdjeljak3Red10PDVValue;
+        private Label labelOdjeljak3Red10OsnovicaValue;
+        private Label labelUkupnoPDVZaPlatiti;
+        private Label labelUkupnoPDVZaPlatitiValue;
+        private Button ClearButtonAirbnb;
+        private Button ClearLastRowButtonAirbnb;
     }
 }

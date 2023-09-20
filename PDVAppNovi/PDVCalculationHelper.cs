@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -10,54 +12,41 @@ namespace PDVAppNovi
     public class PDVCalculationHelper
     {
 
-        public static decimal GetPDVPodatke(Label labelBookingOsnovica, Label labelBookingPDV, NumericUpDown numericUpDownBookingSales,
-            NumericUpDown numericUpDownCommissionNoPDVBooking, NumericUpDown numericUpDownAirbnbSales, NumericUpDown numericUpDownCommissionNoPDVAirbnb,
-            Label labelAirbnbOsnovica, Label labelAirbnbPDV, Label labelOsnovicaUkupno, Label labelPDVUkupno,
-            Label labelCommisionTotalOsnovicaValue, Label labelCommisionTotalPDVValue)
+        public static decimal GetPDVPodatke(PDVCalculationData data)
         {
-            decimal BookingOsnovica;
-            decimal BookingPDV;
-            decimal AirbnbOsnovica;
-            decimal AirbnbPDV;
-            decimal numericAirbnbSales;
-            decimal numericCommissionNoPDVAirbnb;
-            decimal numericBookingSales;
-            decimal numericCommissionNoPDVBooking;
-            decimal OsnovicaUkupno;
-            decimal PDVUkupno;
-            decimal CommissionTotalOsnovica;
-            decimal CommissionTotalPDVValue;
+            decimal numericBookingSales = data.NumericUpDownBookingSales.Value;
+            decimal numericCommissionNoPDVBooking = data.NumericUpDownCommissionNoPDVBooking.Value;
+            decimal numericAirbnbSales = data.NumericUpDownAirbnbSales.Value;
+            decimal numericCommissionNoPDVAirbnb = data.NumericUpDownCommissionNoPDVAirbnb.Value;
+            decimal BookingPDV = (numericBookingSales - numericCommissionNoPDVBooking) * 13 / 113;
+            decimal BookingOsnovica = numericBookingSales - numericCommissionNoPDVBooking - BookingPDV;
+            decimal AirbnbPDV = (numericAirbnbSales - numericCommissionNoPDVAirbnb) * 13 / 113;
+            decimal AirbnbOsnovica = numericAirbnbSales - numericCommissionNoPDVAirbnb - AirbnbPDV;
+            decimal OsnovicaUkupno = BookingOsnovica + AirbnbOsnovica;
+            decimal PDVUkupno = BookingPDV + AirbnbPDV;
+            decimal CommissionTotalOsnovica = numericCommissionNoPDVAirbnb + numericCommissionNoPDVBooking;
+            decimal CommissionTotalPDVValue = CommissionTotalOsnovica * 25 / 100;
 
+            data.LabelBookingOsnovica.Text = BookingOsnovica.ToString("C");
+            data.LabelBookingPDV.Text = BookingPDV.ToString("C");
+            data.NumericUpDownBookingSales.Value = numericBookingSales;
+            data.NumericUpDownCommissionNoPDVBooking.Value = numericCommissionNoPDVBooking;
+            data.NumericUpDownAirbnbSales.Value = numericAirbnbSales;
+            data.NumericUpDownCommissionNoPDVAirbnb.Value = numericCommissionNoPDVAirbnb;
+            data.LabelAirbnbOsnovica.Text = AirbnbOsnovica.ToString("C");
+            data.LabelAirbnbPDV.Text = AirbnbPDV.ToString("C");
+            data.LabelOsnovicaUkupno.Text = OsnovicaUkupno.ToString("C");
+            data.LabelPDVUkupno.Text = PDVUkupno.ToString("C");
+            data.LabelCommisionTotalOsnovicaValue.Text = CommissionTotalOsnovica.ToString("C");
+            data.LabelCommisionTotalPDVValue.Text = CommissionTotalPDVValue.ToString("C");
+            data.LabelOdjeljak2Red2OsnovicaValue.Text = OsnovicaUkupno.ToString("C");
+            data.LabelOdjeljak2Red2PDVValue.Text = PDVUkupno.ToString("C");
+            data.LabelOdjeljak2Red10OsnovicaValue.Text = CommissionTotalOsnovica.ToString("C");
+            data.LabelOdjeljak2Red10PDVValue.Text = CommissionTotalPDVValue.ToString("C");
+            data.LabelOdjeljak3Red10OsnovicaValue.Text = CommissionTotalOsnovica.ToString("C");
+            data.LabelOdjeljak3Red10PDVValue.Text = CommissionTotalPDVValue.ToString("C");
 
-            numericBookingSales = numericUpDownBookingSales.Value;
-            numericCommissionNoPDVBooking = numericUpDownCommissionNoPDVBooking.Value;
-            numericAirbnbSales = numericUpDownAirbnbSales.Value;
-            numericCommissionNoPDVAirbnb = numericUpDownCommissionNoPDVAirbnb.Value;
-
-
-
-            BookingPDV = (numericUpDownBookingSales.Value - numericUpDownCommissionNoPDVBooking.Value) * 13 / Convert.ToDecimal(113);
-            BookingOsnovica = numericBookingSales - numericCommissionNoPDVBooking - BookingPDV;
-            AirbnbPDV = (numericUpDownAirbnbSales.Value - numericUpDownCommissionNoPDVAirbnb.Value) * 13 / Convert.ToDecimal(113);
-            AirbnbOsnovica = numericAirbnbSales - numericCommissionNoPDVAirbnb - AirbnbPDV;
-            OsnovicaUkupno = BookingOsnovica + AirbnbOsnovica;
-            PDVUkupno = BookingPDV + AirbnbPDV;
-            CommissionTotalOsnovica = numericCommissionNoPDVAirbnb + numericCommissionNoPDVBooking;
-            CommissionTotalPDVValue = CommissionTotalOsnovica * 25 / Convert.ToDecimal(100);
-
-            labelBookingOsnovica.Text = BookingOsnovica.ToString("C");
-            labelBookingPDV.Text = BookingPDV.ToString("C");
-            labelAirbnbOsnovica.Text = AirbnbOsnovica.ToString("C");
-            labelAirbnbPDV.Text = AirbnbPDV.ToString("C");
-            labelOsnovicaUkupno.Text = OsnovicaUkupno.ToString("C");
-            labelPDVUkupno.Text = PDVUkupno.ToString("C");
-            labelCommisionTotalOsnovicaValue.Text = CommissionTotalOsnovica.ToString("C");
-            labelCommisionTotalPDVValue.Text = CommissionTotalPDVValue.ToString("C");
             return BookingPDV;
-
-
-
         }
-
     }
 }
